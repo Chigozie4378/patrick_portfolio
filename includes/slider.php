@@ -1,35 +1,38 @@
+<?php
+$ctr1 = new SliderController();
+$select = $ctr1->index();
+$carousel_items = []; // Initialize an array to store carousel items
+
+// Fetch all rows from the result set and store them in an array
+while ($result = mysqli_fetch_array($select)) {
+    $carousel_items[] = $result;
+}
+?>
+
+
+
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner text-success">
-            <div class="carousel-item active">
-                <img src="./assets/images/austin-distel-wD1LRb9OeEo-unsplash.jpg" class="d-block w-100" height="500" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Data Analysis</h5>
+    <ol class="carousel-indicators">
+        <?php foreach ($carousel_items as $key => $item) { ?>
+            <li data-target="#carouselExampleCaptions" data-slide-to="<?php echo $key ?>" <?php echo ($key === 0 ? 'class="active"' : '') ?>></li>
+        <?php } ?>
+    </ol>
+    <div class="carousel-inner text-success">
+        <?php foreach ($carousel_items as $key => $item) { ?>
+            <div class="carousel-item <?php echo ($key === 0 ? 'active' : '') ?>">
+                <img src="<?php echo $item['image2'] ?>" class="d-block w-100" height="500" alt="...">
+                <div class="carousel-caption d-block">
+                    <h5><?php echo $item['title'] ?></h5>
                 </div>
             </div>
-            <div class="carousel-item">
-                <img src="./assets/images/austin-distel-L3OV19xVi8Q-unsplash.jpg" class="d-block w-100" height="500" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Big Data</h5>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="./assets/images/cytonn-photography-ZJEKICY5EXY-unsplash.jpg" class="d-block w-100" height="500" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Data Warehousing</h5>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </button>
+        <?php } ?>
     </div>
+    <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </button>
+</div>

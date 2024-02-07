@@ -11,12 +11,14 @@ $ctr = new AboutController();
 
     <div class="container">
         <div class="row py-5" style="text-align: justify;">
-            <div class="col-sm-12 col-md-8">
+            <div class="col-sm-12 col-md-8" style="overflow: auto; word-wrap: break-word;">
                 <h1><?php 
                $result = mysqli_fetch_array($ctr->index());
                echo $result['title'];
                ?> </h1>
+           
                 <?php echo $result['body'];?>
+              
             </div>
             <div class="col-sm-12 col-md-4 py-5">
                 <img src="<?php echo $result['image2'];?>" alt="" width="100%" height="100%">
