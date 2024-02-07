@@ -1,5 +1,6 @@
 <?php include "./includes/header.php";
 $ctr = new HomeController();
+$ctr1 = new MissionController();
 
 ?>
 
@@ -12,8 +13,8 @@ $ctr = new HomeController();
     <div class="container body1">
         <h4 class="text-center">
             <?php 
-               $result = mysqli_fetch_array($ctr->index());
-               echo $result['body'];
+               $result2 = mysqli_fetch_array($ctr2->index());
+               echo $result2['body'];
                ?> 
         </h4>
     </div>
@@ -22,12 +23,10 @@ $ctr = new HomeController();
    
     <div style="background-color:rgb(81, 81, 193)" class="p-5 text-white">
         <div class="container">
-            <p>
-              
-            Our mission is to be a trusted partner and a reference point for companies dealing with Information &
-                Communication Technology (ICT) related issues, especially in the areas of big data, data/information
-                management; business intelligence; technology architecture; technology project management and technology
-                consulting services.</p>
+        <?php 
+               $result2 = mysqli_fetch_array($ctr1->index());
+               echo $result2['body'];
+               ?> 
         </div>
     </div>
     <hr class="my-4">
