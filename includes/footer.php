@@ -4,9 +4,9 @@
 <div class="container-fluid text-center text-white" <?php  
 $current_path = $_SERVER['PHP_SELF'];
 
-if (strpos($current_path, '/portfolio/pages/services') !== false) {
+if (strpos($current_path, '/patrick_portfolio/pages/services') !== false) {
     echo 'id="contact-bg2"';
-} elseif (strpos($current_path, '/portfolio/pages') !== false) {
+} elseif (strpos($current_path, '/patrick_portfolio/pages') !== false) {
     echo 'id="contact-bg1"';
 } else {
     echo 'id="contact-bg"';
@@ -34,7 +34,7 @@ if (strpos($current_path, '/portfolio/pages/services') !== false) {
                     <i class="fa-solid fa-phone"></i>&nbsp;
                     +44700000000 <br>
                     <i class="fa-solid fa-envelope"></i>&nbsp;
-                    <a href="">info@portfolio.com</a>
+                    <a href="">info@patrick_portfolio.com</a>
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <h2>United Kingdom</h2>
@@ -43,7 +43,7 @@ if (strpos($current_path, '/portfolio/pages/services') !== false) {
                     <i class="fa-solid fa-phone"></i>&nbsp;
                     +44700000000 <br>
                     <i class="fa-solid fa-envelope"></i>&nbsp;
-                    <a href="">info@portfolio.com</a>
+                    <a href="">info@patrick_portfolio.com</a>
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <h2>United Kingdom</h2>
@@ -52,12 +52,12 @@ if (strpos($current_path, '/portfolio/pages/services') !== false) {
                     <i class="fa-solid fa-phone"></i>&nbsp;
                     +44700000000 <br>
                     <i class="fa-solid fa-envelope"></i>&nbsp;
-                    <a href="">info@portfolio.com</a>
+                    <a href="">info@patrick_portfolio.com</a>
                 </div>
             </div>
         </div>
         <hr style="border-color: white;">
-        <div style="color: white; text-align:center">Portfolio &copy; Copyright <?php echo date('Y') ?>. All Right Reserve. <a href="">PrivatePolicy</a></div>
+        <div style="color: white; text-align:center">patrick_Portfolio &copy; Copyright <?php echo date('Y') ?>. All Right Reserve. <a href="">PrivatePolicy</a></div>
     </div>
 
 

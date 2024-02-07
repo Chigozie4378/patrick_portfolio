@@ -19,7 +19,7 @@ $ctr = new AboutController();
                 <?php echo $result['body'];?>
             </div>
             <div class="col-sm-12 col-md-4 py-5">
-                <img src="<?php echo $result['image'];?>" alt="" width="100%" height="100%">
+                <img src="<?php echo $result['image2'];?>" alt="" width="100%" height="100%">
             </div>
         </div>
     </div>
