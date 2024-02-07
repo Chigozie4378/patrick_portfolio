@@ -1,15 +1,13 @@
 <?php
-$ctr1 = new SliderController();
-$select = $ctr1->index();
+$ctr2 = new CarouselController();
+$select2 = $ctr2->index();
 $carousel_items = []; // Initialize an array to store carousel items
 
 // Fetch all rows from the result set and store them in an array
-while ($result = mysqli_fetch_array($select)) {
-    $carousel_items[] = $result;
+while ($result2 = mysqli_fetch_array($select2)) {
+    $carousel_items[] = $result2;
 }
 ?>
-
-
 
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
