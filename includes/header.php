@@ -5,6 +5,8 @@ if (file_exists("../classes/autoload.php")) {
     include_once "../classes/autoload.php";
   }elseif (file_exists("./classes/autoload.php")) {
     include_once "./classes/autoload.php";
+  }elseif (file_exists("../../classes/autoload.php")) {
+    include_once "../../classes/autoload.php";
   }
 ?>
 <!DOCTYPE html>

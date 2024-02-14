@@ -3,7 +3,13 @@
 
 <body>
     <?php include "../../includes/navbar.php" ?>
-    <?php include "../../includes/heading.php" ?>
+    <div class="container-fluid text-center text-white" id="heading-bg2">
+        <div style="padding-top:50px">
+            <h1 style="text-transform: capitalize;">big data</h1>
+
+        </div>
+
+    </div>
 
 
     <div class="container" style="text-align: justify;">

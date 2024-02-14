@@ -33,8 +33,8 @@ $services = $ctr3->index(); // Assuming index() method fetches services from the
                 <div class="col-xs-12 col-12 col-md-4">
                     <div class="service-wrapper">
                         <h2><?php echo $service['title']; ?></h2>
-                        <p class="service-text"><?php echo $service['body']; ?></p>
-                        <a href="<?php echo $service['link']; ?>" class="read-more">Read More</a>
+                        <p class="service-text"><?php echo $service['description']; ?></p>
+                        <a href="<?php echo $service['link']; ?>?service_id=<?php echo $service['id'];?>" class="read-more">Read More</a>
                     </div>
                 </div>
             <?php } ?>

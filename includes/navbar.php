@@ -30,17 +30,32 @@
                         <a class="nav-link" href="/patrick_portfolio/pages/about.php">About Us</a>
                     </li>
                     
-                    <li class="nav-item dropdown  <?php if ($_SERVER['PHP_SELF'] == '/patrick_portfolio/pages/services/big_data.php' || $_SERVER['PHP_SELF'] == '/patrick_portfolio/pages/services/data_analysis.php' || $_SERVER['PHP_SELF'] == '/patrick_portfolio/pages/services/big_data.php' || $_SERVER['PHP_SELF'] == '/patrick_portfolio/pages/services/datawarehouse.php'){ echo 'active'; } ?>">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                            Services
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/patrick_portfolio/pages/services/big_data.php">Big Data</a>
-                            <a class="dropdown-item" href="/patrick_portfolio/pages/services/datawarehouse.php">Data Warehouse</a>
-                           
-                            <a class="dropdown-item" href="/patrick_portfolio/pages/services/data_analysis.php">Data Analysis</a>
-                        </div>
-                    </li>
+                    
+                    <?php
+                    // Assuming $services is an array of services fetched from the database with fields 'title' and 'link'
+                    $services = $ctr->index(); // Assuming $ctr->index() fetches the services from the database
+
+                    // Start the outer list item
+                    echo '<li class="nav-item dropdown">';
+                    echo '<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">';
+                    echo 'Services';
+                    echo '</a>';
+                    echo '<div class="dropdown-menu">';
+
+                    // Output list items for each service
+                    foreach ($services as $service) {
+                        $serviceLink = strtolower(str_replace(' ', '_', $service['title'])) . '.php';
+                        // Check if the current page matches the generated link
+                        $isActive = ($_SERVER['PHP_SELF'] == $service['link']) ? 'active' : '';
+
+                        // Output list item
+                        echo '<a class="dropdown-item ' . $isActive . '" href="/' . $service['link'] . '?service_id='.$service['id'].'">' . $service['title'] . '</a>';
+                    }
+
+                    // Close the dropdown menu and outer list item
+                    echo '</div>';
+                    echo '</li>';
+                    ?>
                     <li class="nav-item <?php if ($_SERVER['PHP_SELF'] == '/patrick_portfolio/pages/careers.php'){ echo 'active'; } ?>">
                         <a class="nav-link" href="/patrick_portfolio/pages/careers.php">Careers</a>
                     </li>

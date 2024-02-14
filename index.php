@@ -14,7 +14,7 @@ $ctr1 = new MissionController();
     <div class="container body1">
         <h4 class="text-center">
             <?php 
-               $result2 = mysqli_fetch_array($ctr2->index());
+               $result2 = mysqli_fetch_array($ctr->index());
                echo $result2['body'];
                ?> 
         </h4>
