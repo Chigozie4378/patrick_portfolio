@@ -44,12 +44,23 @@
 
                     // Output list items for each service
                     foreach ($services as $service) {
-                        $serviceLink = strtolower(str_replace(' ', '_', $service['title'])) . '.php';
+                        $serviceLink1 = strtolower(str_replace('../../', '../', $service['link'])) . '.php';
+                        $serviceLink2 = strtolower(str_replace('../../', './', $service['link'])) . '.php';
                         // Check if the current page matches the generated link
                         $isActive = ($_SERVER['PHP_SELF'] == $service['link']) ? 'active' : '';
 
                         // Output list item
-                        echo '<a class="dropdown-item ' . $isActive . '" href="/' . $service['link'] . '?service_id='.$service['id'].'">' . $service['title'] . '</a>';
+                        if (strpos($current_path, '/patrick_portfolio/pages/services') !== false) {
+                           
+                            echo '<a class="dropdown-item ' . $isActive . '" href="/' . $service['link'] . '?service_id='.$service['id'].'">' . $service['title'] . '</a>';
+                        } 
+                        elseif (strpos($current_path, '/patrick_portfolio/pages') !== false) {
+                            echo '<a class="dropdown-item ' . $isActive . '" href="/' . $serviceLink1 . '?service_id='.$service['id'].'">' . $service['title'] . '</a>';
+                        } else {
+                            // If it's not in '/patrick_portfolio/'
+                            echo '<a class="dropdown-item ' . $isActive . '" href="/' . $serviceLink2 . '?service_id='.$service['id'].'">' . $service['title'] . '</a>';
+                        }
+                        // echo '<a class="dropdown-item ' . $isActive . '" href="/' . $serviceLink2 . '?service_id='.$service['id'].'">' . $service['title'] . '</a>';
                     }
 
                     // Close the dropdown menu and outer list item
