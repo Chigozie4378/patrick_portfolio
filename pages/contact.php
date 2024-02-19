@@ -1,9 +1,16 @@
-<?php include "../includes/header.php" ?>
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+include "../includes/header.php" ?>
 
 
 <body>
     <?php include "../includes/navbar.php" ?>
-    <?php include "../includes/heading.php" ?>
+    <?php include "../includes/heading.php"; 
+    $ctr  = new ContactController();
+    $ctr->store();   
+    ?>
 
 
     <div class="container py-4" style="text-align: justify;">
@@ -47,24 +54,29 @@
     </div>
     <div class="container-fluid jumbotron">
         <div class="offset-md-3 col-md-6">
-            <form action="">
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+
                 <div class="form-group">
                     <label for="">Name:</label>
-                    <input type="text" class="form-control" placeholder="Enter your name">
+                    <span class="text-danger"><?php echo $ctr->nameErr?></span>
+                    <input type="text" class="form-control" placeholder="Enter your name" name="name">
                 </div>
                 <div class="form-group">
                     <label for="">Email:</label>
-                    <input type="text" class="form-control" placeholder="Enter your email">
+                    <span class="text-danger"><?php echo $ctr->emailErr?></span>
+                    <input type="text" class="form-control" placeholder="Enter your email" name="email">
                 </div>
                 <div class="form-group">
                     <label for="">Subject:</label>
-                    <input type="text" class="form-control" placeholder="Enter your subject">
+                    <span class="text-danger"><?php echo $ctr->messageErr?></span>
+                    <input type="text" class="form-control" placeholder="Enter your subject" name="subject">
                 </div>
                 <div class="form-group">
                     <label for="">Message:</label>
-                    <textarea name="" id="" cols="10" rows="5" class="form-control"></textarea>
+                    <span class="text-danger"><?php echo $ctr->messageErr?></span>
+                    <textarea name="message" id="" cols="10" rows="5" class="form-control"></textarea>
                 </div>
-                <input type="submit" value="Send" class="btn btn-info">
+                <input type="submit" name="send" value="Send" class="btn btn-info">
             </form>
         </div>
     </div>

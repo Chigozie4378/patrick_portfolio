@@ -25,7 +25,7 @@ $ctr3 = new ServicesController();
 $services = $ctr3->index(); // Assuming index() method fetches services from the database
 ?>
 
-<div class="container-fluid" style="background-color:rgb(227, 240, 243);">
+<div class="container-fluid" style="background-color:rgb(227, 240, 243);" id="services">
     <div class="container py-4">
         <h1 class="text-center text-primary">Our Services</h1>
         <div class="row pt-1">

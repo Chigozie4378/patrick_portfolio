@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Company Portfolio Website</title>
+<style>
+  /* Basic styling */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  footer div {
+    flex-basis: calc(33.33% - 20px);
+    margin-right: 20px;
+  }
+  h3 {
+    margin-top: 0;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    margin-bottom: 10px;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .latest-projects img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+
+<footer>
+  <div>
+    <h3>About Us</h3>
+    <p>Brief overview of the company's mission and values.</p>
+    <ul>
+      <li>Address: 123 Company St, City</li>
+      <li>Phone: 123-456-7890</li>
+      <li>Email: info@example.com</li>
+    </ul>
+    <ul>
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">Twitter</a></li>
+      <li><a href="#">Instagram</a></li>
+    </ul>
+  </div>
+  <div>
+    <h3>Quick Links</h3>
+    <ul>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Testimonials</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </div>
+  <div class="latest-projects">
+    <h3>Latest Projects</h3>
+    <img src="project1.jpg" alt="Project 1">
+    <p>Project 1 description</p>
+    <img src="project2.jpg" alt="Project 2">
+    <p>Project 2 description</p>
+  </div>
+</footer>
+
+</body>
+</html>

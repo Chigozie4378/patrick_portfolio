@@ -3,11 +3,15 @@ session_start();
 
 if (file_exists("../classes/autoload.php")) {
     include_once "../classes/autoload.php";
-  }elseif (file_exists("./classes/autoload.php")) {
+} elseif (file_exists("./classes/autoload.php")) {
     include_once "./classes/autoload.php";
-  }elseif (file_exists("../../classes/autoload.php")) {
+} elseif (file_exists("../../classes/autoload.php")) {
     include_once "../../classes/autoload.php";
-  }
+}
+
+
+// Include Composer's autoloader
+require '../vendor/autoload.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,6 +86,7 @@ if (file_exists("../classes/autoload.php")) {
             width: 100%;
             background-size: cover;
         }
+
         #contact-bg2 {
             background-image: linear-gradient(rgba(32, 163, 193, 0.5), rgba(121, 104, 185, 0.5)), url('../../assets/images/urban-architecture-office-building-business-600nw-1339962440.webp');
             height: 40vh;

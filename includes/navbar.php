@@ -1,3 +1,6 @@
+<?php 
+$ctr_navbar = new NavbarController();
+?>
  <!-- Navigation   -->
  <nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: rgb(255, 255, 255);">
         <div class="container-fluid">
@@ -33,7 +36,7 @@
                     
                     <?php
                     // Assuming $services is an array of services fetched from the database with fields 'title' and 'link'
-                    $services = $ctr->index(); // Assuming $ctr->index() fetches the services from the database
+                    $services = $ctr_navbar->navbarIndex(); // Assuming $ctr->index() fetches the services from the database
 
                     // Start the outer list item
                     echo '<li class="nav-item dropdown">';
@@ -44,8 +47,8 @@
 
                     // Output list items for each service
                     foreach ($services as $service) {
-                        $serviceLink1 = strtolower(str_replace('../../', '../', $service['link'])) . '.php';
-                        $serviceLink2 = strtolower(str_replace('../../', './', $service['link'])) . '.php';
+                        $serviceLink1 = strtolower(str_replace('../../', '../', $service['link']));
+                        $serviceLink2 = strtolower(str_replace('../../', './', $service['link'])) ;
                         // Check if the current page matches the generated link
                         $isActive = ($_SERVER['PHP_SELF'] == $service['link']) ? 'active' : '';
 
