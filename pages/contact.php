@@ -54,6 +54,7 @@ include "../includes/header.php" ?>
     </div>
     <div class="container-fluid jumbotron">
         <div class="offset-md-3 col-md-6">
+        <?php echo $ctr->success?>
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 
                 <div class="form-group">
@@ -68,7 +69,7 @@ include "../includes/header.php" ?>
                 </div>
                 <div class="form-group">
                     <label for="">Subject:</label>
-                    <span class="text-danger"><?php echo $ctr->messageErr?></span>
+                    <span class="text-danger"><?php echo $ctr->subjectErr?></span>
                     <input type="text" class="form-control" placeholder="Enter your subject" name="subject">
                 </div>
                 <div class="form-group">

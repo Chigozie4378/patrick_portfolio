@@ -9,11 +9,7 @@ if (file_exists("../classes/autoload.php")) {
     include_once "../../classes/autoload.php";
 }
 
-if (file_exists("../vendor/autoload.php")) {
-    require '../vendor/autoload.php';
-} elseif (file_exists("./vendor/autoload.php")) {
-    require './vendor/autoload.php';
-} 
+
 
 
 ?>
