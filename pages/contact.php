@@ -58,19 +58,19 @@ include "../includes/header.php" ?>
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 
                 <div class="form-group">
-                    <label for="">Name:</label>
+                    <label for="">Full Name:</label>
                     <span class="text-danger"><?php echo $ctr->nameErr?></span>
-                    <input type="text" class="form-control" placeholder="Enter your name" name="name">
+                    <input type="text" class="form-control" placeholder="Enter your Full Name" name="name">
                 </div>
                 <div class="form-group">
                     <label for="">Email:</label>
                     <span class="text-danger"><?php echo $ctr->emailErr?></span>
-                    <input type="text" class="form-control" placeholder="Enter your email" name="email">
+                    <input type="text" class="form-control" placeholder="Enter your Email" name="email">
                 </div>
                 <div class="form-group">
                     <label for="">Subject:</label>
                     <span class="text-danger"><?php echo $ctr->subjectErr?></span>
-                    <input type="text" class="form-control" placeholder="Enter your subject" name="subject">
+                    <input type="text" class="form-control" placeholder="Enter your Subject" name="subject">
                 </div>
                 <div class="form-group">
                     <label for="">Message:</label>
